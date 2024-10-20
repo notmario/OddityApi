@@ -1,0 +1,17 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = "if AUT.badges.card_type or AUT.badges.force_rarity then"
+position = "after"
+payload = '''
+if card.ability.set == "Oddity" and card.config.center.rarity then
+  local new_card_type = ({localize('k_common'), localize('k_uncommon'), localize('k_rare'), localize('k_legendary')})[card.config.center.rarity]
+  badges[#badges + 1] = create_badge(new_card_type,G.C.RARITY[card.config.center.rarity], nil, 1.2)
+end
+'''
+match_indent = true

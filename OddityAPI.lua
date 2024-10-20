@@ -47,6 +47,24 @@ SMODS.ConsumableType({
   collection_rows = { 5, 5 },
   shop_rate = 3.0,
   loc_txt = {},
+	rarities = {
+		{
+			key = 1,
+			rate = 0.7,
+		},
+		{
+			key = 2,
+			rate = 0.25,
+		},
+		{
+			key = 3,
+			rate = 0.05,
+		},
+		{
+			key = 4,
+			rate = 0,
+		},
+	}
 })
 
 SMODS.UndiscoveredSprite {
@@ -109,7 +127,7 @@ if OddityAPI.config.enable_tags then
 				self:yep('+', G.C.PURPLE,function() 
 					for i = 1, self.config.spawn_oddities do
 						if G.consumeables and #G.consumeables.cards < G.consumeables.config.card_limit then
-							local card = create_card('Oddity', G.consumeables, true, nil, nil, nil, nil, 'heirloomtag')
+							local card = create_card('Oddity', G.consumeables, true, nil, 4, nil, nil, 'heirloomtag')
 							card:add_to_deck()
 							G.consumeables:emplace(card)
 						end
