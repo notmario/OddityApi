@@ -76,16 +76,14 @@ return {
       },
     },
     Tag = {
-      t_odd_oddity = {
-        {
-          name = "Oddity Tag",
-          text = {
-            "Gives a free",
-            "{C:oddity}Mega Oddity Pack",
-          }
+      tag_odd_oddity = {
+        name = "Oddity Tag",
+        text = {
+          "Gives a free",
+          "{C:oddity}Mega Oddity Pack",
         }
       },
-      t_odd_heirloom = {
+      tag_odd_heirloom = {
         name = "Heirloom Tag",
         text = {
           "Create a",
@@ -100,6 +98,7 @@ return {
       k_oddity_pack = "Oddity Pack",
       k_oddity = "Oddity",
       b_oddity_cards = "Oddities",
+      b_take = "TAKE",
     },
     labels = {
       oddity = "Oddity"
